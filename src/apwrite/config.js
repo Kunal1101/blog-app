@@ -16,7 +16,7 @@ export class Services {
     this.bucket = new Storage(this.client);
   }
 
-  async createPoste({ title, content, slug, status, userId, fetauredImage }) {
+  async createPost({ title, content, slug, status, userId, fetauredImage }) {
     try {
       return this.databases.createDocument(
         conf.appwriteDatabaseId,
@@ -79,12 +79,12 @@ export class Services {
     }
   }
 
-  async getPosts(queries = [Query.equal("status", "equal")]) {
+  async getPosts() {
     try {
       return this.databases.listDocuments(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        queries
+        [Query.equal("status", "equal")]
       );
     } catch (e) {
       throw new Error("Appwrite services:: Get all posts", e);
