@@ -31,7 +31,7 @@ export class Services {
         }
       );
     } catch (e) {
-      throw new Error(e);
+      throw new Error("Appwrite services:: Create document", e);
     }
   }
 
@@ -50,7 +50,7 @@ export class Services {
         }
       );
     } catch (e) {
-      throw new Error(e);
+      throw new Error("Appwrite services:: Update document", e);
     }
   }
 
@@ -63,7 +63,7 @@ export class Services {
       );
       return true;
     } catch (e) {
-      throw new Error(e);
+      throw new Error("Appwrite services:: Delete document", e);
     }
   }
 
@@ -75,7 +75,7 @@ export class Services {
         slug
       );
     } catch (e) {
-      throw new Error(e);
+      throw new Error("Appwrite services:: Get post", e);
     }
   }
 
@@ -87,7 +87,7 @@ export class Services {
         queries
       );
     } catch (e) {
-      throw new Error(e);
+      throw new Error("Appwrite services:: Get all posts", e);
     }
   }
 }
