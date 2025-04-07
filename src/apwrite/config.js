@@ -1,11 +1,9 @@
-import { useId } from "react";
 import conf from "../conf/conf";
-import { Client, Account, ID, Databases, Query, Storage } from "appwrite";
+import { Client, Account, Databases, Query } from "appwrite";
 
 export class Services {
   client = new Client();
   databases;
-  bucket;
 
   constructor() {
     this.client
@@ -13,7 +11,6 @@ export class Services {
       .setProject(conf.appwriteProjectId);
     this.account = new Account(this.client);
     this.databases = new Databases(this.client);
-    this.bucket = new Storage(this.client);
   }
 
   async createPost({ title, content, slug, status, userId, fetauredImage }) {
@@ -91,3 +88,6 @@ export class Services {
     }
   }
 }
+
+const services = new Services();
+export default services;
