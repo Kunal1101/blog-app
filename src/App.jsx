@@ -7,7 +7,7 @@ import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import { Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -35,6 +35,6 @@ function App() {
       </div>
     </div>
   ) : null;
-}
+};
 
 export default App;
