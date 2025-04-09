@@ -1,4 +1,3 @@
-import { use } from "react";
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
